@@ -1,0 +1,36 @@
+<ion-view align-title="left" hide-nav-bar="true">
+
+
+  <ion-content style="background: url(img/login.jpg) center; background-size: cover;" padding="true">
+ 
+
+  <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1>One Plus One</h1>
+            </div>
+        </div>
+
+    <div class="card stable-bg">
+      <div class="list">
+        <label class="item item-input ">
+          <span style="color:black;" class="input-label">{{"phone_number" | translate}}</span>
+          <input type="text" ng-model="username" style="color:black">
+        </label>
+     
+         <label class="item item-input ">
+          <span style="color:black;" class="input-label">{{"password" | translate}}</span>
+          <input type="password" ng-model="password" style="color:black">
+        </label>
+      </div>
+ </div>
+    <br>
+      <div class="button-bar">
+  <a class="button button-calm-900" ng-click="signin(username,password)" type="submit">{{"login" | translate}}</a>
+    
+  <a class="button button-calm-900" ng-click="gosign()">{{"signup" | translate}}</a>
+
+</div>
+
+  </ion-content>
+</ion-view>

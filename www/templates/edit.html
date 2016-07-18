@@ -1,0 +1,29 @@
+<ion-view view-title="Edit Product">
+
+  <ion-content>
+    <form >
+      <div class="list">
+        <label class="item item-input">
+          <span style="color:black" class="input-label">Product</span>
+          <input type="text" ng-model="item">
+        </label>
+        <label class="item item-input">
+          <span style="color:black" class="input-label">Cost Of Items</span>
+          <input type="number" ng-model="buy_price">
+        </label>
+       
+        <label class="item item-input">
+          <span style="color:black" class="input-label">Number</span>
+          <input type="number" ng-model="number">
+        </label>
+        <label class="item">
+          <button class="button button-block button-calm-900" ng-click="saveEdit(item,buy_price,0,number)">Save</button>
+          </label>
+           <label class="item">
+          <button class="button button-block button-assertive-900"  ng-click="delete($index)">Delete</button>
+          </label>
+      
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

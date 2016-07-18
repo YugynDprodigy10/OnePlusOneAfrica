@@ -1,0 +1,17 @@
+<ion-view view-title="Cash Balance">
+
+
+  <ion-content>
+<br>
+<div class="card">
+       
+        <div class="item item-text-wrap">
+          <b>Cash Sales : <span style="color:red">Ghc</span> {{sales - 0 | number : 2}} </b><br>
+    <b>Expenses  : <span style="color:red">Ghc</span> {{(spent - 0) | number : 2}}</b><br>
+    <hr>
+    <b>Cash Balance :  <span style="color:red">Ghc</span> {{balance() | number : 2}} </b>
+        </div>
+    </div>
+  
+  </ion-content>
+</ion-view>

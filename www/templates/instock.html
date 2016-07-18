@@ -1,0 +1,34 @@
+<ion-view view-title="Sell Product">
+ <ion-nav-buttons side="right">
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class="ion-home"></i></button>
+       <button class="button button-assertive button-fab " ng-click="barscan()"><b>SCAN</b></button>
+      </ion-nav-buttons>
+
+
+
+  <ion-content>
+  
+    <ion-list
+            show-delete="shouldShowDelete"
+            can-swipe="listCanSwipe">
+            <label class="item item-input">
+  <i style="font-size: 18px" class="icon ion-search placeholder-icon"></i>
+  <input style="font-size: 18px" ng-model="filterinstock" type="search" placeholder='{{"instockheader" | translate}}'>
+</label>
+      
+      <ion-item  collection-repeat="thing in stock|filter:filterinstock" ng-click="go_to_report($index)" on-hold="setId($index);Sell()">
+       <span style="font-size: 18px;color:rgb(239, 71, 58)"><b> </b></span>   <span style="font-size: 18px">{{thing.item}}</span>
+       <span class="badge badge-assertive">{{thing.number}}</span>
+
+        
+        <ion-option-button class="button-assertive-900"
+                           ng-click="setId($index);Sell()">
+          {{"sell" | translate}}
+        </ion-option-button>
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

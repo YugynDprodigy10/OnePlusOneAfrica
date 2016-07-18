@@ -1,0 +1,30 @@
+<ion-view view-title='Expenses'>
+ <ion-nav-buttons side="right">
+
+ 
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class=" ion-home"></i></button>
+   
+        <button class="button button-balanced button-fab " ng-click="show()"><i class="icon ion-plus"></i></button>
+      </ion-nav-buttons>
+  <ion-content>
+  
+
+  <div class="item item-divider">
+    Total Expense : Ghc {{dspent | number:2}}
+  </div>
+
+  <ion-list can-swipe="true">
+
+    <ion-item  class="item item-avatar" href="#" ng-repeat="what in spending">
+      <img src="img/ionic.png">
+      <h2><span style="color:rgb(239, 71, 58)"><b>Ghc {{what.amount | number : 2}}</b></span></h2>
+      <p>{{what.onWhat}}</p>
+      <ion-option-button class="button-assertive-900" ng-click="delex($index)">
+          Delete
+        </ion-option-button>
+    </ion-item >
+</ion-list>
+
+
+  </ion-content>
+</ion-view>

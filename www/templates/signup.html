@@ -1,0 +1,43 @@
+<ion-view view-title="One Plus One">
+ <ion-nav-bar class="bar-calm-900 mynavbar">
+  </ion-nav-bar>
+  <ion-nav-title>
+     <span > One Plus One </span>
+    </ion-nav-title>
+  <ion-content>
+    <form >
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label" style="color:black">Full Name</span>
+          <input type="text" placeholder="David Asare" ng-model="fullname">
+        </label>
+           <label class="item item-input">
+          <span class="input-label" style="color:black">Phone Number</span>
+          <input type="text" placeholder="0244 xxx xxx" ng-model="username">
+        </label>
+         <label class="item item-input">
+          <span class="input-label" style="color:black">{{"business_name" | translate}}</span>
+          <input type="text" placeholder="The Everything Store" ng-model="business">
+        </label>
+        <label class="item item-input">
+          <span class="input-label" style="color:black">Location</span>
+          <input type="text" placeholder="Greater Accra, New Town" ng-model="location">
+        </label>
+        <label class="item item-input">
+          <span class="input-label" style="color:black">Password</span>
+          <input type="password" ng-model="password">
+        </label>
+         <label class="item item-input">
+          <span class="input-label" style="color:black">Confirm Password</span>
+          <input type="password" ng-model="confirm">
+        </label>
+        <label class="item">
+          <button class="button button-outline button-block button-calm-900" type="submit" ng-click="signup(username,fullname,business,location,password,confirm)">Sign up</button>
+        </label>
+        <label class="item">
+          <button class="button button-outline button-block button-calm-900"  ng-click="golog()">Already have an account</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

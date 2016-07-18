@@ -1,0 +1,43 @@
+<ion-view view-title="Product Info">
+ <ion-nav-buttons side="right">
+ 
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class="ion-home"></i></button>
+    
+       
+      </ion-nav-buttons>
+  <ion-content padding="true">
+    
+
+  <div class="card">
+  <div class="item item-text-wrap">
+    <b>{{"product" | translate}}:</b>  {{product.item}} 
+  </div>
+</div>  
+     <div class="list card">
+  <a href="#" class="item ">
+    
+   <b>Amount :</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span>{{product.buy_price | number:2}} 
+  </a>
+
+ 
+
+  <a href="#" class="item">
+    <b>Quantity:</b>
+   {{product.number}} 
+  </a>
+
+</div>
+<div class="card">
+  <div class="item item-text-wrap">
+    <b>{{"total_cost" | translate}}:</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{ cost | number :2}} 
+  </div>
+</div> 
+
+ <div class="button-bar" ng-controller="AppCtrl">
+  <a class="button button-calm-900" ng-click="_edit(position,product.item,product.buy_price,product.sell_price,product.number)" type="submit">{{"edit" | translate}}</a>
+    
+ 
+
+</div> 
+  </ion-content>
+</ion-view>

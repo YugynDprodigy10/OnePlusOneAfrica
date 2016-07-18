@@ -1,0 +1,42 @@
+<ion-view view-title="Sold Product Info">
+ <ion-nav-buttons side="right">
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class="ion-home"></i></button>
+       
+      </ion-nav-buttons>
+  <ion-content padding="true">
+  <div class="card">
+  <div class="item item-text-wrap">
+    <b>{{"product" | translate}}:</b>  {{product.item}} 
+  </div>
+</div>  
+     <div class="list card">
+  <a href="#" class="item ">
+    
+   <b>Unit Price:</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span>{{ (product.sell_price / product.number ) - 0 |number :2}} 
+  </a>
+
+  <a href="#" class="item">
+    <b>Quantity Sold:</b>
+   {{product.number}} 
+  </a>
+
+  <a href="#" class="item">
+    <b>Amount :</b>
+   <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{product.sell_price |number :2}} 
+  </a>
+
+
+</div>
+<div class="card">
+  <div class="item item-text-wrap">
+    <b>Profit / (Loss):</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{ profit |number :2}} 
+  </div>
+</div> 
+ <div class="button-bar" ng-controller="AppCtrl">
+  <a class="button button-calm-900" ng-click="nundo(position)" type="submit">{{"undo" | translate}}</a>
+    
+ 
+
+</div>  
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view view-title="One Plus One">
+
+
+  <ion-content>
+ <div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title">This Week</strong>
+    </div>
+<div class="card">
+        <div class="item item-divider">
+            Sales
+        </div>
+        <div class="item item-text-wrap">
+           <canvas id="pie" class="chart chart-pie"
+            chart-data="usedata" chart-labels="uselabels">
+            </canvas> 
+        </div>
+    </div>
+
+<div class="card">
+        <div class="item item-divider">
+            Profit
+        </div>
+        <div class="item item-text-wrap">
+           <canvas id="pie" class="chart chart-pie"
+            chart-data="useprofit" chart-labels="uselabels">
+            </canvas> 
+        </div>
+    </div>
+
+   <ion-list>
+      <div class="item item-divider">
+    Top sales
+  </div> 
+      <ion-item  ng-repeat="thing in topsales | orderBy:'-number'">
+       <span style="font-size: 18px;color:rgb(239, 71, 58)"><b> Ghc {{thing.sell_price}}</b></span>   <span style="font-size: 18px">{{thing.item}}</span>
+       <span class="badge badge-assertive">{{thing.number}}</span>
+
+      </ion-item>
+    </ion-list>
+  
+<div class="list">
+<label class="item">
+         <button class="button button-block button-calm-900"  ng-click="go_to_spent()">Monthly Chart</button> 
+  </label>
+</div>
+  
+  </ion-content>
+</ion-view>

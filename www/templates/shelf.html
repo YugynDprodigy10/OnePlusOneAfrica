@@ -1,0 +1,39 @@
+<ion-view view-title="Inventory">
+ <ion-nav-buttons side="right">
+ 
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class="ion-home"></i></button>
+    
+        <button class="button button-balanced button-fab " ng-click="Add()"><i class="icon ion-plus"></i></button>
+      </ion-nav-buttons>
+  <ion-content>
+
+
+  <div class="item item-divider">
+    Total Inventory : Ghc {{dstock |number :2}}
+  </div>
+
+  
+    <ion-list
+            show-delete="shouldShowDelete"
+            can-swipe="listCanSwipe">
+            <label class="item item-input">
+  <i style="font-size: 18px" class="icon ion-search placeholder-icon"></i>
+  <input style="font-size: 18px" ng-model="filterinstock" type="search" placeholder='Search Inventory'>
+</label>
+      
+      <ion-item  collection-repeat="thing in stock|filter:filterinstock" ng-click="go_to_invent($index)" on-hold="_edit($index,thing.item,thing.buy_price,thing.sell_price,thing.number)">
+       <span style="font-size: 18px;color:rgb(239, 71, 58)"><b> Ghc {{thing.buy_price * thing.number | number:2}}</b></span>   <span style="font-size: 18px">{{thing.item}}</span>
+       <span class="badge badge-assertive">{{thing.number}}</span>
+
+        <ion-option-button class="button-calm-900"
+                           ng-click="_edit($index,thing.item,thing.buy_price,thing.sell_price,thing.number)">
+          {{"edit" | translate}}
+        </ion-option-button>
+       
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

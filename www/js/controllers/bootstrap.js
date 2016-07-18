@@ -1,0 +1,1 @@
+angular.module('AddUp.Controllers',['restangular','chart.js','pascalprecht.translate','ionic-material','ionMdInput']);

@@ -1,0 +1,67 @@
+<ion-view view-title="Report">
+
+  <ion-content>
+  
+ 
+   <div class="card">
+  <div class="item item-divider">
+    {{"amount_sold" | translate}}
+  </div>
+  <div class="item item-text-wrap">
+    Ghs {{sales}}
+  </div>
+ 
+</div>
+    <div class="card">
+  <div class="item item-divider">
+    {{"profit" | translate}}
+  </div>
+  <div class="item item-text-wrap">
+    Ghs {{profit}}
+  </div>
+ 
+</div>
+  
+
+  <div class="card">
+  <div class="item item-divider">
+   {{"amount_in_stock" | translate}}
+  </div>
+  <div class="item item-text-wrap">
+    Ghs {{stock}}
+  </div>
+ 
+</div>
+
+  <div class="card">
+  <div class="item item-divider">
+    {{"spent" | translate}}
+  </div>
+  <div class="item item-text-wrap">
+    Ghs {{spent}}
+  </div>
+ 
+</div>
+
+<div class="list">
+  <label class="item">
+          <button class="button button-block button-calm-900"  ng-click="go_to_performance()">Weekly Chart</button>
+</label>
+
+<label class="item">
+         <button class="button button-block button-calm-900"  ng-click="go_to_spent()">This Month</button> 
+  </label>
+ 
+  <!--
+   <label class="item">
+          <button class="button button-block button-calm-900"  onclick="window.open('http://addupafrica.com/report', '_system')">{{"download" | translate}}</button>
+  </label>
+--><!--
+   <label class="item">
+          <button class="button button-block button-assertive-900"  ng-click="go_to_reset()">{{"reset" | translate}}  </button>
+  </label>
+-->
+ 
+</div>
+  </ion-content>
+</ion-view>
