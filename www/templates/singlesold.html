@@ -4,30 +4,38 @@
        
       </ion-nav-buttons>
   <ion-content padding="true">
-  <div class="card">
+  <div class="card" ng-show="!service">
   <div class="item item-text-wrap">
     <b>{{"product" | translate}}:</b>  {{product.item}} 
   </div>
 </div>  
      <div class="list card">
-  <a href="#" class="item ">
+  <a href="#" class="item" ng-show="!service">
     
    <b>Unit Price:</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span>{{ (product.sell_price / product.number ) - 0 |number :2}} 
   </a>
 
-  <a href="#" class="item">
+  <a href="#" class="item" ng-show="!service">
     <b>Quantity Sold:</b>
    {{product.number}} 
   </a>
 
   <a href="#" class="item">
     <b>Amount :</b>
-   <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{product.sell_price |number :2}} 
+   <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{product.sell_price |number :2}} {{product.amount}}
+  </a>
+  <a href="#" class="item">
+    <b>Date :</b>
+   <span style="color:rgb(239, 71, 58)"></span> {{product.time |date}}
+  </a>
+    <a href="#" class="item" ng-show="service">
+    <b>Service :</b>
+   <span style="color:rgb(239, 71, 58)"><b> </b></span> {{product.sell_price |number :2}} {{product.reason}}
   </a>
 
 
 </div>
-<div class="card">
+<div class="card" ng-show="!service">
   <div class="item item-text-wrap">
     <b>Profit / (Loss):</b> <span style="color:rgb(239, 71, 58)"><b>Ghc </b></span> {{ profit |number :2}} 
   </div>

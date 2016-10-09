@@ -14,31 +14,31 @@
    <div class="card">
   
   <div class="item item-text-wrap">
-    <b>Sales : <span style="color:red">Ghc</span> {{sales - 0 | number : 2}} </b><br>
-    <b>Cost of Goods Sold  : <span style="color:red">Ghc</span> {{(soldcost - 0) | number : 2}}</b><br>
+    <b ng-show = "!isService">Sales : <span style="color:red">Ghc</span> {{sales - 0 | number : 2}}</b>
+    <b ng-show = "isService">Sales : <span style="color:red">Ghc</span> {{service - 0 | number : 2}}</b>
+    <br>
+    <b ng-show = "!isService">Cost of Goods Sold  : <span style="color:red">Ghc</span> {{(soldcost - 0) | number : 2}}</b><br>
     <b>Expenses  : <span style="color:red">Ghc</span> {{(spent - 0) | number : 2}}</b><br>
     <hr>
-    <b>Profit / (Loss) :  <span style="color:red">Ghc</span> {{ profit - 0 | number : 2}} </b>
+    <b ng-show="!isService">Profit / (Loss) :  <span style="color:red">Ghc</span> {{ profit - 0 | number : 2}} </b>
+    <b ng-show="isService">Cash Balance :  <span style="color:red">Ghc</span> {{ service - spent | number : 2}} </b>
   </div>
  
 </div>
-   <div class="card" ng-click="go_to_performance()">
-  <div class="item item-divider">
-    Cash Balance
-  </div>
-  <div class="item item-text-wrap">
-   <b> <span style="color:red">Ghc</span> {{balance() | number : 2}}</b>
-  </div>
- 
-</div>
+   <!--<div class="card" ng-click="go_to_performance()" ng-show="isService">
+      <div class="item item-divider">
+        Cash Balance
+      </div>
+      <div class="item item-text-wrap">
+          <b> 
+              <span style="color:red">Ghc</span> {{balance() | number : 2}}
+          </b>
+      </div> 
+  </div>-->
   
 
 <div class="list">
-
-
-   <label class="item">
-          <button class="button button-block button-positive-900"  ng-click="loans()">Loans</button>
-  </label>
+ 
    <label class="item">
           <button class="button button-block button-assertive-900"  ng-click="go_to_reset()">Reset</button>
   </label>

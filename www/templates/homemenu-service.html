@@ -6,48 +6,41 @@
        <ion-nav-buttons side="left">
          
         <button class="button button-assertive button-fab " ng-click="logout()"><i class="icon ion-log-out"></i></button>
-        <button class="button button-balanced button-fab"  style="color:#ffffff;text-decoration:none;" align="center"><b><i class="ion-ios-telephone"></i></b></button>
+       <button class="button button-balanced button-fab" style="color:#ffffff;text-decoration:none;" align="center"><b><i class="ion-ios-telephone"></i></button>
       </ion-nav-buttons>
   <ion-content padding="true">
 
  <div class="row text-center" >
-   <div class="col-md-1" ng-click="inventory()">
-    <div class="card">
-  <div class="item item-text-wrap">
-    <img src="img/shefl.png">
-    <h3 align="center">STOCKS</h3>
-    <h4 align="center">Ghc {{dstock |number:2}}</h4>
-  </div>
-</div></div>
-  <div class="col-md-1" ng-click="sales()">
+  <div class="col-md-1" ng-click="saleservice()">
   	<div class="card">
   <div class="item item-text-wrap">
     <img src="img/sales.png">
     <h3 align="center">SALES</h3>
-    <h4 align="center">Ghc {{dsales |number:2}}</h4>
+    <h4 align="center">Ghc {{dservice |number:2}}</h4>
   </div></div>
 </div>
- 
-</div>
-<div class="row">
   <div class="col-md-1" ng-click="expense()">
-  	<div class="card">
+    <div class="card">
   <div class="item item-text-wrap">
     <img src="img/expense.png">
     <h3 align="center">EXPENSES</h3>
     <h4 align="center">Ghc {{dspent |number:2}}</h4>
-    <h4 align="center" style="color:white">kdmk</h4>
   </div>
 </div></div>
+ 
+</div>
+<div class="row text-center">
+
   <div class="col-md-1" ng-click="report()">
   	<div class="card">
   <div class="item item-text-wrap">
-    <img src="img/report.png">
+    <img height="120px" src="img/report.png">
     <h3 align="center">REPORT</h3>
-    <h4 align="center" >Profit: Ghc {{ profit() | number : 2}}</h4>
-    <h4 align="center">Balance: Ghc {{ balance() | number: 2}}</h4>
+    <h4 align="center" ng-show="">Profit: Ghc {{ profit() | number : 2}}</h4>
+    <h4 align="center">Balance: Ghc {{ serviceBalance() | number: 2}}</h4>
   </div>
 </div></div>
+
 </div>
 <div class="row">
   <div class="col-md-1" ui-sref="loans">
@@ -55,14 +48,16 @@
   <div class="item item-text-wrap">
     <img src="img/loan.png">
     <h3 align="center">LOANS</h3>
-    </div>
+    
+  </div>
 </div></div>
   <div class="col-md-1" ui-sref="bank">
     <div class="card">
   <div class="item item-text-wrap">
     <img src="img/bank.png">
     <h3 align="center">BANKING</h3>
-    </div>
+
+  </div>
 </div></div>
 </div>
   </ion-content>

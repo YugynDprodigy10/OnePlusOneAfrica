@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-calm-900">
+    <h1 class="title">Withdrawal</h1>
+    <div class="buttons">
+      <button class="button button-assertive button-fab" ng-click="hide()"><i class="icon ion-android-close"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    
+      <div class="list" >
+        <label  class="item item-input">
+          <span style="color:black" class="input-label">Amount</span>
+          <input style="background-color: rgba(0, 0, 0, 0.07)" type="text" ng-model="amt">
+        </label>
+        <label class="item">
+          <button class="button button-block button-calm-900"  ng-click="withdraw(amt);amt=0">Withdraw</button>
+        </label>
+      
+      </div>
+   
+  </ion-content>
+</ion-modal-view>

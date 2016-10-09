@@ -1,11 +1,11 @@
-<ion-view view-title="Loans">
+<ion-view view-title="Banking">
 <ion-nav-buttons side="right">
 
  
        
 
-         <button class="button button-balanced button-fab " ng-click="add()"><i class="icon ion-plus"></i></button>
-        <button class="button button-assertive button-fab " ng-click="pay()"><i class="icon ion-minus"></i></button>
+         <button class="button button-balanced button-fab " ng-click="pay()"><i class="icon ion-plus"></i></button>
+        <button class="button button-assertive button-fab " ng-click="add()"><i class="icon ion-minus"></i></button>
    
      
       </ion-nav-buttons>
@@ -22,15 +22,15 @@
 
  <div class="card">
   <div class="item item-text-wrap">
-    <b>You Owe <span style="color:red">Ghc</span> {{amount | number : 2}} </b><br>
+    <b>Your Balance <span style="color:red">Ghc</span> {{amount }} </b><br>
    
     
   </div>
 </div>
-<h3>You Have Paid</h3>
+<h3>Your Deposits</h3>
 <ul class="list">
     <li class="item" ng-repeat="payment in payments | orderBy: reverse : true">
-      Paid {{payment.amount}} on {{payment.date| date:'MM/dd/yyyy'}} 
+      {{payment.type}} {{payment.amount}} on {{payment.date| date:'MM/dd/yyyy'}} 
     </li>
 </ul>
 

@@ -1,0 +1,35 @@
+<ion-view view-title="Sales">
+ <ion-nav-buttons side="right">
+         <button class="button button-positive button-fab " ng-click="goHome()"><i class="ion-home"></i></button>
+        <button class="button button-balanced button-fab " ng-click="toShelf()"><b>SELL</b></button>
+      </ion-nav-buttons>
+  <ion-content >
+
+
+  <div class="item item-divider">
+    Total Sales : Ghc {{dservice | number:2}}
+  </div>
+
+    <ion-list
+            show-delete="false"
+            can-swipe="listCanSwipe">
+             <label class="item item-input">
+  <i style="font-size: 18px" class="icon ion-search placeholder-icon"></i>
+  <input style="font-size: 18px" ng-model="filtersold" type="search" placeholder='Search Sales'>
+</label>
+          
+      <ion-item collection-repeat="thing in sold|filter:filtersold" ng-click="go_to_sold_detail($index)" on-hold="nundo($index)">
+     <span style="font-size: 18px;color:rgb(239, 71, 58)">Sale of <b>GHc{{thing.amount | number:2}} on {{thing.time | date}}</b></span><span style="font-size: 18px">  {{thing.item}}</span>
+       <span class="badge badge-calm">{{thing.number }}</span>
+        <ion-option-button class="button-calm"
+                           ng-click="nundo($index)">
+          {{"undo" | translate}}
+        </ion-option-button>
+      
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

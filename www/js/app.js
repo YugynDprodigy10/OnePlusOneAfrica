@@ -23,7 +23,8 @@ angular.module('addUp', ['ionic', 'AddUp.Controllers','ngCordova','ionic-native-
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$httpProvider,RestangularProvider, $translateProvider,$ionicConfigProvider,$ionicHistoryProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider, RestangularProvider,
+   $translateProvider, $ionicConfigProvider, $ionicHistoryProvider) {
   
 $ionicConfigProvider.scrolling.jsScrolling(false);
 
@@ -35,9 +36,9 @@ $ionicConfigProvider.scrolling.jsScrolling(false);
         "type": "flip",
         "direction": "left"},
       templateUrl: 'templates/login.html',
-      controller: 'login',
-   
+      controller: 'login',  
     })
+
     .state('signup', {
       url: '/signup',
        nativeTransitions: {
@@ -48,32 +49,36 @@ $ionicConfigProvider.scrolling.jsScrolling(false);
      
     })
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl',
-  
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl',  
 })
 
   .state('instock', {
-    url: '/instock',
-    templateUrl: 'templates/instock.html',
-    controller:'AppCtrl',
-    }
-  )
+      url: '/instock',
+      templateUrl: 'templates/instock.html',
+      controller:'AppCtrl',
+    })
 
    .state('shelf', {
-    url: '/shelf',
-    templateUrl: 'templates/shelf.html',
-    controller:'AppCtrl',
-    }
-  )
+      url: '/shelf',
+      templateUrl: 'templates/shelf.html',
+      controller:'AppCtrl',
+    })
 
   .state('sold', {
       url: '/sold',
       templateUrl: 'templates/sold.html',
       controller:'AppCtrl',
     })
+
+   .state('soldservice', {
+      url: '/soldservice',
+      templateUrl: 'templates/sold-service.html',
+      controller:'AppCtrl',
+    })
+
     .state('report', {
       url: '/report',
       templateUrl: 'templates/report.html',
@@ -141,36 +146,43 @@ $ionicConfigProvider.scrolling.jsScrolling(false);
       controller: 'howto'
         
     })
-     .state('tips', {
-      url: '/tips',
-      templateUrl: 'templates/tips.html',
-      controller: 'tips'
-       
+    .state('tips', {
+        url: '/tips',
+        templateUrl: 'templates/tips.html',
+        controller: 'tips'       
     }) 
-       .state('reset', {
-      url: '/reset',
-      templateUrl: 'templates/reset.html',
-      controller: 'reset'
-       
+    .state('reset', {
+        url: '/reset',
+        templateUrl: 'templates/reset.html',
+        controller: 'reset'      
     })
       .state('home', {
-      url: '/home',
-      templateUrl: 'templates/homemenu.html',
-      controller: 'AppCtrl'
+        url: '/home',
+        templateUrl: 'templates/homemenu.html',
+        controller: 'AppCtrl'
        
     })
-      .state('loans', {
-      url: '/loans',
-      templateUrl: 'templates/loans.html',
-      controller: 'Loans'
-       
+     .state('service', {
+        url: '/service',
+        templateUrl: 'templates/homemenu-service.html',
+        controller: 'AppCtrl'       
+    })
+     .state('loans', {
+        url: '/loans',
+        templateUrl: 'templates/loans.html',
+        controller: 'Loans'      
+    })
+    .state('bank', {
+        url: '/bank',
+        templateUrl: 'templates/bank.html',
+        controller: 'bank'      
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
    RestangularProvider.setBaseUrl('https://api.parse.com');
    RestangularProvider.setDefaultHeaders({'X-Parse-Application-Id': 'sS32ldJqA5k8HxTTbgK6yRFEhnG1FVm2HXcgmd2W','X-Parse-REST-API-Key':'HqNZ4yd0VMGqTsZZiA7snuQQC3TkwfdXcA8UMgmf'});
    $httpProvider.defaults.headers.get = { 'X-Parse-Application-Id' : 'sS32ldJqA5k8HxTTbgK6yRFEhnG1FVm2HXcgmd2W','X-Parse-REST-API-Key':'HqNZ4yd0VMGqTsZZiA7snuQQC3TkwfdXcA8UMgmf','X-Parse-Session-Token': localStorage.getItem('session')}
-    $httpProvider.defaults.headers.post = { 'X-Parse-Application-Id' : 'sS32ldJqA5k8HxTTbgK6yRFEhnG1FVm2HXcgmd2W','X-Parse-REST-API-Key':'HqNZ4yd0VMGqTsZZiA7snuQQC3TkwfdXcA8UMgmf','X-Parse-Session-Token': localStorage.getItem('session')}
+   $httpProvider.defaults.headers.post = { 'X-Parse-Application-Id' : 'sS32ldJqA5k8HxTTbgK6yRFEhnG1FVm2HXcgmd2W','X-Parse-REST-API-Key':'HqNZ4yd0VMGqTsZZiA7snuQQC3TkwfdXcA8UMgmf','X-Parse-Session-Token': localStorage.getItem('session')}
    $translateProvider.translations('en', {
             instock: "What I have",
             instockheader:"What I still have",

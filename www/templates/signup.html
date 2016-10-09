@@ -8,34 +8,47 @@
     <form >
       <div class="list">
         <label class="item item-input">
-          <span class="input-label" style="color:black">Full Name</span>
-          <input type="text" placeholder="David Asare" ng-model="fullname">
+          <span class="input-label" style="color:black">Full Name:</span>
+          <input type="text" placeholder="" ng-model="fullname">
         </label>
            <label class="item item-input">
-          <span class="input-label" style="color:black">Phone Number</span>
-          <input type="text" placeholder="0244 xxx xxx" ng-model="username">
+          <span class="input-label" style="color:black">Phone Number:</span>
+          <input type="text" placeholder="" ng-model="username">
         </label>
+        <label class="item item-input">
+    <span class="input-label" style="color:black">Business Type:</span>
+    <select ng-model="businessType">
+      <option value="">Service</option>
+      <option value="retail">Retail</option>
+      <option value="service">Hair Dresser</option>
+      <option value="service">Taxi Driver</option>
+      <option value="service">Barber</option>
+      <option value="retail">Boutique</option>
+      <option value="retail" >Provision Store</option>
+    </select>
+  </label>
          <label class="item item-input">
-          <span class="input-label" style="color:black">{{"business_name" | translate}}</span>
-          <input type="text" placeholder="The Everything Store" ng-model="business">
+          <span class="input-label" style="color:black">{{"business_name" | translate}}:</span>
+          <input type="text" placeholder="" ng-model="business">
         </label>
         <label class="item item-input">
-          <span class="input-label" style="color:black">Location</span>
-          <input type="text" placeholder="Greater Accra, New Town" ng-model="location">
+          <span class="input-label" style="color:black">Location:</span>
+          <input type="text" placeholder="" ng-model="location">
         </label>
         <label class="item item-input">
-          <span class="input-label" style="color:black">Password</span>
+          <span class="input-label" style="color:black">Password:</span>
           <input type="password" ng-model="password">
         </label>
          <label class="item item-input">
-          <span class="input-label" style="color:black">Confirm Password</span>
+          <span class="input-label" style="color:black">Confirm Password:</span>
           <input type="password" ng-model="confirm">
         </label>
         <label class="item">
-          <button class="button button-outline button-block button-calm-900" type="submit" ng-click="signup(username,fullname,business,location,password,confirm)">Sign up</button>
+          <button class="button button-outline button-block button-calm-900" type="submit" ng-click="signup(username,fullname,business,location,password,confirm,businessType)">Sign up</button>
         </label>
         <label class="item">
           <button class="button button-outline button-block button-calm-900"  ng-click="golog()">Already have an account</button>
+          <p class="text-center"><a style="color:black">Need any help ?<a></p>
         </label>
       </div>
     </form>

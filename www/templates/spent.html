@@ -18,7 +18,7 @@
     <ion-item  class="item item-avatar" href="#" ng-repeat="what in spending">
       <img src="img/ionic.png">
       <h2><span style="color:rgb(239, 71, 58)"><b>Ghc {{what.amount | number : 2}}</b></span></h2>
-      <p>{{what.onWhat}}</p>
+      <p>{{what.onWhat}} {{what.date | date}}</p>
       <ion-option-button class="button-assertive-900" ng-click="delex($index)">
           Delete
         </ion-option-button>
